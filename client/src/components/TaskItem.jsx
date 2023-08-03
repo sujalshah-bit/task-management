@@ -13,7 +13,7 @@ const TaskItem = ({ task, onUpdate, onDelete }) => {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`http://localhost:5000/api/v1/tasks/${task._id}`, updateData);
+      await axios.put(`https://task-management-apoi-v1.vercel.app/api/v1/tasks/${task._id}`, updateData);
       setIsUpdating(false);
       onUpdate();
     } catch (error) {
@@ -23,7 +23,7 @@ const TaskItem = ({ task, onUpdate, onDelete }) => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/v1/tasks/${task._id}`);
+      await axios.delete(`https://task-management-apoi-v1.vercel.app/api/v1/tasks/${task._id}`);
       onDelete();
     } catch (error) {
       console.error('Error deleting task:', error);
@@ -34,7 +34,7 @@ const TaskItem = ({ task, onUpdate, onDelete }) => {
     const newStatus = e.target.checked;
     setUpdateData({ ...updateData, status: newStatus });
     // Immediately update the status on the server when the checkbox is clicked
-    axios.put(`http://localhost:5000/api/v1/tasks/${task._id}`, { ...updateData, status: newStatus })
+    axios.put(`https://task-management-apoi-v1.vercel.app/api/v1/tasks/${task._id}`, { ...updateData, status: newStatus })
       .then(() => onUpdate())
       .catch((error) => console.error('Error updating task status:', error));
   };

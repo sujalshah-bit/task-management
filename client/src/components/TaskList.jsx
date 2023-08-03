@@ -13,7 +13,7 @@ const TaskList = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/v1/tasks");
+      const response = await axios.get("https://task-management-apoi-v1.vercel.app/api/v1/tasks");
       setTasks(response.data);
     } catch (error) {
       console.error("Error fetching tasks:", error);
@@ -22,7 +22,7 @@ const TaskList = () => {
 
   const handleTaskSubmit = async (values, actions) => {
     try {
-      await axios.post("http://localhost:5000/api/v1/tasks", values);
+      await axios.post("https://task-management-apoi-v1.vercel.app/api/v1/tasks", values);
       fetchTasks();
     } catch (error) {
       console.error("Error adding task:", error);
