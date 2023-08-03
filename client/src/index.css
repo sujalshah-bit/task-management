@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer utilities {
+    .custom-gradient {
+      background-color: #000000;
+      background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+    }
+    .glassmorphism-box {
+        background-color: rgba(255, 255, 255, 0.15); /* Adjust the alpha (last value) for transparency */
+        backdrop-filter: blur(10px); /* Adjust the blur value as per your preference */
+        border-radius: 10px; /* Adjust the border radius to control the shape of the box */
+        border: 1px solid rgba(255, 255, 255, 0.3); /* Border color with transparency */
+        padding: 20px; /* Add padding to the box content */
+      }
+  }
+  
